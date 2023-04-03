@@ -1,27 +1,15 @@
 @import '../../../node_modules/normalize.css/normalize';
 @import 'variables';
+@import 'body';
+@import 'header';
+@import 'nav';
+@import 'titles';
+@import 'grid';
+@import 'images';
+@import 'footer';
+@import 'animated';
 
-html {
-    height: 100%;
-}
-
-body {
-    margin: 0 auto;
-    max-width: 100%;
-    background: linear-gradient(169deg, rgb(22, 36, 0) 0%, rgb(113, 151, 122) 20%, rgb(41, 79, 51) 100%);
-    background-repeat: no-repeat;
-}
-
-.site-header {
-    height: 10rem;
-    background-size: cover;
-    background-position: center;
-}
-
-.site-title {
-    color: whitesmoke;
-    font-size: x-large;
-}
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 
 .picOfMe { 
     max-height: 20rem;
@@ -32,17 +20,11 @@ h2,
 h3,
 h4 {
     border-bottom: 4px double #ccc;
-    color: whitesmoke;
+    color: $font-color;
 }
 
 p {
-    color: whitesmoke;
-}
-
-.picDiv {
-    box-shadow: 30px 30px 40px darkolivegreen;
-    max-width: fit-content;
-    max-height: 320px;
+    color: $font-color;
 }
 
 .content {

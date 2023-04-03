@@ -1,0 +1,13 @@
+.siteNav a {
+    text-decoration: none;
+    color: $font-color;
+    font-size: 2rem;
+}
+
+.siteNav a:hover {
+    background-color: $hover;
+}
+
+ul {
+    list-style-type: none;
+}

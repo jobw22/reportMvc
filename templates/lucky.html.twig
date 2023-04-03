@@ -1,0 +1,12 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+    <h1 class="page-title">Dagens turnummer</h1>
+    <div class="content">
+        <div class="animated-background">
+            <h2>Ditt turnummer för dagen är: {{ number }}</h2>
+        </div>
+    </div>
+{% endblock %}

@@ -15,15 +15,21 @@
     </head>
     <body>
         <header class="site-header" style="background-image: url({{ asset('img/straws.webp') }})">
-            <span class="site-title">My Symfony Site</span>
+            <span class="site-title">Jonathan Linnér || jobw22</span>
         </header>
-        <nav>
+        <nav class="siteNav">
             <ul>
                 <li><a href="{{ path('home') }}">Home</a></li>
                 <li><a href="{{ path('about') }}">About</a></li>
                 <li><a href="{{ path('report') }}">Report</a></li>
+                <li><a href="{{ path('lucky_number') }}">Lucky</a></li>
             </ul>
         </nav>
         {% block body %}{% endblock %}
+        {% block footer %}
+            <footer id="footer">
+                <p>Skapad av Jonathan Linnér student på BTH</p>
+            </footer>
+        {% endblock %}
     </body>
 </html>
