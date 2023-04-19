@@ -1,0 +1,21 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Draw Several{% endblock %}
+
+{% block body %}
+    <h1 class="page-title">Draw Several</h1>
+    <div class="content">
+    <div class="drawCard">
+    {% for card in theCards %}
+    <div class="card {{ card|slice(1, 1) }}">{{ card }}</div><br>
+    {% endfor %}
+    </div>
+    {% if cardCount == 0 %}
+        <p>There are no cards left</p>
+    {% elseif cardCount == 1 %}
+        <p>There is {{ cardCount }} card left</p>
+    {% else %}
+        <p>There are {{ cardCount }} cards left</p>
+    {% endif %}
+    </div>
+{% endblock %}

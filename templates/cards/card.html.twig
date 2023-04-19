@@ -1,0 +1,26 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Card{% endblock %}
+
+{% block body %}
+    <h1 class="page-title">Card</h1>
+    <div class="content">
+        <p>
+            Det finns 4 klasser<br>
+        </p>
+        <h3>Card</h3><br>
+            Denna klassen representerar ett kort och instansieras med 2 värden, färg och värde.
+            För att sedan få kortet till att kunna visas används klassen <strong>CardGrapic</strong>.
+        <h3>CardGraphic</h3><br>
+            Denna klassen ärver alltså från klassen <strong>Card</strong>. <strong>CardGrapic</strong>
+            har en metod som returnerar kortet i strängformat, exempelvis "[♥2]".
+        <h3>CardHand</h3><br>
+            Denna klassen består av flera <strong>Cards</strong>. Aggregetation
+        <h3>DeckOfCards</h3><br>
+        Denna klassen består av flera <strong>Cards</strong>. Komposition<br>
+        <a class="card-button" href="card/deck">deck</a>
+        <a class="card-button" href="card/deck/shuffle">shuffle</a>
+        <a class="card-button" href="card/deck/draw">draw</a>
+        <br>
+    </div>
+{% endblock %}

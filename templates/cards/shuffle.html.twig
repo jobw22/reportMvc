@@ -1,0 +1,25 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Shuffle{% endblock %}
+
+{% block body %}
+    <h1 class="page-title">Shuffle</h1>
+    <div class="content">
+    <div class="cards">
+    {% for value in DeckOfCards %}
+    {% if loop.index == 1 %}
+        <div class="oneSuit suit-{{ loop.index }}">
+    {% endif %}
+        {% if loop.index is divisible by(13) %}
+            <div class="card {{ value|slice(1, 1) }}">{{ value }}</div><br>
+            </div>
+            {% if loop.index != 52 %}
+            <div class="oneSuit suit-{{ loop.index }}">
+            {% endif %}
+        {% else %}
+            <div class="card {{ value|slice(1, 1) }}">{{ value }}</div><br>
+        {% endif %}
+    {% endfor %}
+    </div>
+    </div>
+{% endblock %}

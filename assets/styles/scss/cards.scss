@@ -1,0 +1,46 @@
+.card {
+    font-size: 3rem;
+    margin: 2rem;
+    text-align: center;
+}
+
+// .suit-13,
+// .suit-39 {
+//     color: red;
+// }
+
+.♥,
+.♦ {
+    color: red;
+}
+
+.cards {
+    background-color: $main-off-color;
+    display: flex;
+}
+
+.oneSuit {
+    width: 25%;
+    margin: 2rem;
+    display: inline-block; /* or display: inline-flex; */
+    box-sizing: border-box;
+}
+
+.drawCard {
+    background-color: $main-off-color;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 5rem;
+    padding: 10rem;
+}
+
+.card-button {
+    padding: 2rem;
+    border-radius: 1rem;
+    background-color: $button;
+    color: $dark-font;
+    font-size: 2rem;
+    margin: 3rem;
+    text-decoration: none;
+    display: inline-block;
+}
