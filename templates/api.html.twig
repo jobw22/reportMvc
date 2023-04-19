@@ -1,0 +1,18 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Om{% endblock %}
+
+{% block body %}
+    <h1 class="page-title">Api</h1>
+    <p class="api-p">Quote visar dagens datum, vad klockan är och även ett random quote.</p>
+    <a class="card-button" href="{{ path('api_quote') }}">Quote</a>
+
+    <p class="api-p">Deck visar en kortlek som är sorterad enligt färg och värde.</p>
+    <a class="card-button" href="{{ path('api_deck') }}">Deck</a>
+
+    <p class="api-p">Shuffle visar också en kortlek, men denna kortleken är istället blandad</p>
+    <form method="post" action="{{ path('api_shuffle') }}">
+        <button type="submit" class="card-button">Shuffle</button>
+    </form>
+
+{% endblock %}

@@ -450,12 +450,21 @@ body {
 .card-button {
   padding: 2rem;
   border-radius: 1rem;
+  border: none;
   background-color: #fff;
   color: #112015;
   font-size: 2rem;
   margin: 3rem;
   text-decoration: none;
   display: inline-block;
+}
+
+.card-button:hover {
+  background-color: rgb(207, 207, 207);
+}
+
+.api-p {
+  margin-left: 2rem;
 }
 
 .picOfMe {
