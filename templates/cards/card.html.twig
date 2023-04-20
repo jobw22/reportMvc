@@ -15,9 +15,15 @@
             Denna klassen ärver alltså från klassen <strong>Card</strong>. <strong>CardGrapic</strong>
             har en metod som returnerar kortet i strängformat, exempelvis "[♥2]".
         <h3>CardHand</h3><br>
-            Denna klassen består av flera <strong>Cards</strong>. Aggregetation
+            Denna klassen består av flera <strong>Cards</strong>. <strong>CardHand</strong> kan
+            existera utan att ha kort i sig därför är relationen mellan klasserna
+            aggregetation.
         <h3>DeckOfCards</h3><br>
-        Denna klassen består av flera <strong>Cards</strong>. Komposition<br>
+            Denna klassen består av flera <strong>Cards</strong>. Varje <strong>Card</strong>
+            skapas i <strong>DeckOfCards</strong> deras relation är alltså komposition.<br>
+        <img class ="uml-img" src="{{ asset('../img/uml.webp') }}" alt="Uml diagram"><br>
+
+
         <a class="card-button" href="card/deck">deck</a>
         <a class="card-button" href="card/deck/shuffle">shuffle</a>
         <a class="card-button" href="card/deck/draw">draw</a>

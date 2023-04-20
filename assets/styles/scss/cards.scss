@@ -4,11 +4,6 @@
     text-align: center;
 }
 
-// .suit-13,
-// .suit-39 {
-//     color: red;
-// }
-
 .♥,
 .♦ {
     color: red;
@@ -52,4 +47,9 @@
 
 .api-p {
     margin-left: 2rem;
+}
+
+.uml-img {
+    border: solid $button 2px;
+    margin-top: 2rem;
 }

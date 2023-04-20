@@ -10,9 +10,21 @@
     <p class="api-p">Deck visar en kortlek som är sorterad enligt färg och värde.</p>
     <a class="card-button" href="{{ path('api_deck') }}">Deck</a>
 
-    <p class="api-p">Shuffle visar också en kortlek, men denna kortleken är istället blandad</p>
+    <p class="api-p">Shuffle visar också en kortlek, men denna kortleken är blandad.</p>
     <form method="post" action="{{ path('api_shuffle') }}">
         <button type="submit" class="card-button">Shuffle</button>
     </form>
+
+    <h3>Det finns {{ cardCount }} kort kvar. Tryck på SHUFFLE för att blanda nya kort!</h3>
+    <p class="api-p">Draw drar <strong>1</strong> kort från kortleken</p>
+    <form method="post" action="{{ path('api_card') }}">
+        <button type="submit" class="card-button">Draw</button>
+    </form>
+
+    <h3>Det finns {{ cardCount }} kort kvar. Tryck på SHUFFLE för att blanda nya kort!</h3>
+        <p class="api-p">Draw cards drar <strong>5</strong> kort från kortleken.</p>
+    <form method="post" action="{{ path('api_several_cards', {'number': 5}) }}">
+    <input class="card-button" type="submit" name="do_it" value="Draw cards!">
+</form>
 
 {% endblock %}

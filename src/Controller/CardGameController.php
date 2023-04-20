@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controller;
+
 // Cards
 use App\Cards\Card;
 use App\Cards\CardGraphic;
@@ -15,7 +16,6 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 class CardGameController extends AbstractController
 {
-
     #[Route("/card", name: "card")]
     public function cards(): Response
     {
@@ -41,8 +41,7 @@ class CardGameController extends AbstractController
     #[Route("/card/deck/shuffle", name: "card/deck/shuffle")]
     public function shuffled(
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         $deck = new DeckOfCards();
         $session->set("deck", $deck);
 
@@ -60,11 +59,11 @@ class CardGameController extends AbstractController
     #[Route("/card/deck/draw", name: "card/deck/draw")]
     public function draw(
         SessionInterface $session
-    ): Response
-    {
-        //retrive the count of cards left from the session
+    ): Response {
+        // retrive the count of cards left from the session
         if ($session->get("deck")) {
             $deck = $session->get("deck");
+            $hand = $session->get("hand");
             $session->set("cards_left", count($deck->getDeck()));
             $cardsLeft = $session->get("cards_left");
         } else {
@@ -73,6 +72,7 @@ class CardGameController extends AbstractController
             // make a new hand
             $hand = new CardHand();
             $session->set("deck", $deck);
+            $session->set("hand", $hand);
             $session->set("cards_left", count($deck->getDeck()));
             $cardsLeft = $session->get("cards_left");
         }
@@ -101,17 +101,19 @@ class CardGameController extends AbstractController
     }
 
     #[Route("/card/deck/draw/{num<\d+>}", name: "draw_cards")]
-    public function drawSeveral(int $num,
+    public function drawSeveral(
+        int $num,
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         //retrive the count of cards left from the session
         if ($session->get("deck")) {
             $deck = $session->get("deck");
             $cardsLeft = $session->get("cards_left");
+            $hand = $session->get("hand");
         } else {
             $deck = new DeckOfCards();
             $session->set("deck", $deck);
+            $hand = new CardHand();
             $session->set("cards_left", count($deck->getDeck()));
             $cardsLeft = $session->get("cards_left");
         }
