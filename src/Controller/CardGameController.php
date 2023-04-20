@@ -85,7 +85,7 @@ class CardGameController extends AbstractController
         $oneCard = $stringDeck[$cardNum];
 
         // add the card to the hand
-        $hand->addCard($oneCard);
+        // $hand->addCard($oneCard);
 
         //remove the card just picked from the deck
         $deck->removeCard($cardNum);
